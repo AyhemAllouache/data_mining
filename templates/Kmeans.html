@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Means Clustering</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-ray-100 font-sans">
+    <div class="container mx-auto px-4 py-10">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-6 text-center">Select Features and Input New Data Point</h2>
+        <form action="/kmeans" method="post" class="bg-white shadow-lg rounded-lg p-6 mb-4">
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="feature1">Feature 1:</label>
+                    <select class="block w-full bg-gray-100 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="feature1" id="feature1" required>
+                        <option value="BALANCE">Balance</option>
+            <option value="BALANCE_FREQUENCY">Balance Frequency</option>
+            <option value="PURCHASES">Purchases</option>
+            <option value="ONEOFF_PURCHASES">Oneoff Purchases</option>
+            <option value="INSTALLMENTS_PURCHASES">Installments Purchases</option>
+            <option value="CASH_ADVANCE">Cash Advance</option>
+            <option value="PURCHASES_FREQUENCY">Purchases Frequency</option>
+            <option value="ONEOFF_PURCHASES_FREQUENCY">Oneoff Purchases Frequency</option>
+            <option value="PURCHASES_INSTALLMENTS_FREQUENCY">Purchases Installments Frequency</option>
+            <option value="CASH_ADVANCE_FREQUENCY">Cash Advance Frequency</option>
+            <option value="CASH_ADVANCE_TRX">Cash Advance Trx</option>
+            <option value="PURCHASES_TRX">Purchases Trx</option>
+            <option value="CREDIT_LIMIT">Credit Limit</option>
+            <option value="PAYMENTS">Payments</option>
+            <option value="MINIMUM_PAYMENTS">Minimum Payments</option>
+            <option value="PRC_FULL_PAYMENT">Prc Full Payment</option>
+            <option value="TENURE">Tenure</option>
+                    </select>
+                    <input class="block w-full bg-gray-100 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" type="text" name="value1" id="value1" placeholder="Value for Feature 1" required>
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="feature2">Feature 2:</label>
+                    <select class="block w-full bg-gray-100 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="feature2" id="feature2" required>
+                        <option value="BALANCE">Balance</option>
+            <option value="BALANCE_FREQUENCY">Balance Frequency</option>
+            <option value="PURCHASES">Purchases</option>
+            <option value="ONEOFF_PURCHASES">Oneoff Purchases</option>
+            <option value="INSTALLMENTS_PURCHASES">Installments Purchases</option>
+            <option value="CASH_ADVANCE">Cash Advance</option>
+            <option value="PURCHASES_FREQUENCY">Purchases Frequency</option>
+            <option value="ONEOFF_PURCHASES_FREQUENCY">Oneoff Purchases Frequency</option>
+            <option value="PURCHASES_INSTALLMENTS_FREQUENCY">Purchases Installments Frequency</option>
+            <option value="CASH_ADVANCE_FREQUENCY">Cash Advance Frequency</option>
+            <option value="CASH_ADVANCE_TRX">Cash Advance Trx</option>
+            <option value="PURCHASES_TRX">Purchases Trx</option>
+            <option value="CREDIT_LIMIT">Credit Limit</option>
+            <option value="PAYMENTS">Payments</option>
+            <option value="MINIMUM_PAYMENTS">Minimum Payments</option>
+            <option value="PRC_FULL_PAYMENT">Prc Full Payment</option>
+            <option value="TENURE">Tenure</option>
+                    </select>
+                    <input class="block w-full bg-gray-100 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" type="text" name="value2" id="value2" placeholder="Value for Feature 2" required>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        {% if plot_url %}
+        <div class="bg-white shadow-lg rounded-lg px-6 py-4">
+            <img src="{{ plot_url }}" alt="Cluster Plot" class="max-w-full h-auto mx-auto"> 
+        </div>
+        {% endif %}
+        
+    </div>
+</body>
+</html>

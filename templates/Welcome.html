@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Exploration</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Machine Learning Exploration</h1>
+            <p>Dive into the world of Unsupervised and Supervised Learning</p>
+        </header>
+
+        <div class="content">
+            <div class="section" id="kmeans">
+                <h2>Unsupervised Learning: K-Means Clustering</h2>
+                <p>Discover patterns and groupings in your data with K-Means, an algorithm that identifies clusters based on similarities.</p>
+                <a href="/kmeans" class="button">Try K-Means</a>
+            </div>
+
+            <div class="section" id="knn">
+                <h2>Supervised Learning: K-Nearest Neighbors (KNN)</h2>
+                <p>Learn how KNN classifies new data points based on the closest known data points.</p>
+                <a href="/knn" class="button">Try KNN</a>
+            </div>
+        </div>
+
+        <footer>
+            <!-- Footer content goes here -->
+        </footer>
+    </div>
+</body>
+</html>
